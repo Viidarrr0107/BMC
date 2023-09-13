@@ -1,0 +1,1195 @@
+allow user_t NetworkManager_t:dbus send_msg;
+allow user_t accountsd_t:dbus send_msg;
+allow user_t acpid_runtime_t:dir { getattr open search };
+allow user_t acpid_runtime_t:sock_file { append getattr open write };
+allow user_t acpid_t:unix_stream_socket connectto;
+allow user_t agp_device_t:chr_file getattr;
+allow user_t alsa_etc_t:dir { getattr ioctl lock open read search };
+allow user_t alsa_etc_t:file { getattr ioctl lock open read };
+allow user_t alsa_etc_t:lnk_file { getattr read };
+allow user_t alsa_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t anon_inodefs_t:dir { getattr open search };
+allow user_t anon_inodefs_t:file { append getattr ioctl lock open read write };
+allow user_t application_exec_type:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t apt_var_cache_t:dir { getattr ioctl lock open read search };
+allow user_t apt_var_cache_t:file { getattr ioctl map open read };
+allow user_t apt_var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t apt_var_lib_t:file { getattr ioctl lock open read };
+allow user_t apt_var_lib_t:lnk_file { getattr read };
+allow user_t autofs_t:dir { getattr open search };
+allow user_t bin_t:dir { getattr ioctl lock open read search };
+allow user_t bin_t:dir { getattr open search }; [ pppd_for_user ]:True
+allow user_t bin_t:dir { getattr open search }; [ user_ping ]:True
+allow user_t bin_t:dir { getattr open search }; [ user_ping ]:True
+allow user_t bin_t:file { entrypoint execute execute_no_trans getattr ioctl lock map open read };
+allow user_t bin_t:lnk_file { getattr read };
+allow user_t bin_t:lnk_file { getattr read }; [ pppd_for_user ]:True
+allow user_t bin_t:lnk_file { getattr read }; [ user_ping ]:True
+allow user_t bin_t:lnk_file { getattr read }; [ user_ping ]:True
+allow user_t bluetooth_helper_exec_t:file { execute getattr ioctl map open read };
+allow user_t bluetooth_helper_t:dir { getattr ioctl lock open read search };
+allow user_t bluetooth_helper_t:file { getattr ioctl lock open read };
+allow user_t bluetooth_helper_t:lnk_file { getattr read };
+allow user_t bluetooth_helper_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t bluetooth_helper_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t bluetooth_helper_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t bluetooth_helper_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t bluetooth_helper_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t bluetooth_helper_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t bluetooth_runtime_t:dir { getattr open search };
+allow user_t bluetooth_runtime_t:sock_file { append getattr open write };
+allow user_t bluetooth_t:dbus send_msg;
+allow user_t bluetooth_t:socket { append bind connect getattr getopt ioctl read setattr setopt shutdown write };
+allow user_t bluetooth_t:unix_stream_socket connectto;
+allow user_t boot_t:dir { getattr open search };
+allow user_t canna_runtime_t:dir { getattr open search };
+allow user_t canna_runtime_t:sock_file { append getattr open write };
+allow user_t canna_t:unix_stream_socket connectto;
+allow user_t cdrecord_exec_t:file { execute getattr ioctl map open read };
+allow user_t cdrecord_t:dir { getattr ioctl lock open read search };
+allow user_t cdrecord_t:file { getattr ioctl lock open read };
+allow user_t cdrecord_t:lnk_file { getattr read };
+allow user_t cdrecord_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t cert_t:dir { getattr ioctl lock open read search };
+allow user_t cert_t:file { getattr ioctl lock open read };
+allow user_t cert_t:lnk_file { getattr read };
+allow user_t cgroup_t:dir { getattr ioctl lock open read search };
+allow user_t cgroup_t:file { append getattr ioctl lock open read write };
+allow user_t cgroup_t:lnk_file { getattr read };
+allow user_t checkpolicy_exec_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t chfn_exec_t:file { execute getattr ioctl map open read };
+allow user_t chfn_t:process transition;
+allow user_t chkpwd_exec_t:file { execute getattr ioctl map open read };
+allow user_t chkpwd_t:dir { getattr ioctl lock open read search };
+allow user_t chkpwd_t:file { getattr ioctl lock open read };
+allow user_t chkpwd_t:lnk_file { getattr read };
+allow user_t chkpwd_t:process { getattr transition };
+allow user_t chromium_exec_t:file { execute getattr ioctl map open read };
+allow user_t chromium_naclhelper_t:process { sigchld sigkill signal signull sigstop };
+allow user_t chromium_renderer_t:dir { getattr ioctl lock open read search };
+allow user_t chromium_renderer_t:file { getattr ioctl lock open read };
+allow user_t chromium_renderer_t:lnk_file { getattr read };
+allow user_t chromium_renderer_t:process { getattr sigchld sigkill signal signull sigstop };
+allow user_t chromium_sandbox_t:process { sigchld sigkill signal signull sigstop };
+allow user_t chromium_t:dbus send_msg;
+allow user_t chromium_t:dir { getattr ioctl lock open read search };
+allow user_t chromium_t:file { getattr ioctl lock open read };
+allow user_t chromium_t:lnk_file { getattr read };
+allow user_t chromium_t:process { getattr sigchld sigkill signal signull sigstop transition };
+allow user_t chromium_t:unix_stream_socket connectto;
+allow user_t chroot_exec_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t cifs_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { getattr ioctl lock open read search }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:dir { getattr open search }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:fifo_file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:file { execute execute_no_trans getattr ioctl map open read }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write }; [ use_samba_home_dirs ]:True
+allow user_t cifs_t:sock_file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_samba_home_dirs ]:True
+allow user_t client_packet_type:packet { recv send };
+allow user_t client_xevent_t:x_event receive;
+allow user_t client_xevent_t:x_synthetic_event receive;
+allow user_t colord_t:dbus send_msg;
+allow user_t consolehelper_exec_t:file { execute getattr ioctl map open read };
+allow user_t consolehelper_type:dbus send_msg;
+allow user_t crond_t:fifo_file { append getattr ioctl lock open read write };
+allow user_t crond_t:process sigchld;
+allow user_t crond_tmp_t:file { append getattr ioctl lock read write };
+allow user_t crontab_exec_t:file { execute getattr ioctl map open read };
+allow user_t cupsd_config_t:dbus send_msg;
+allow user_t cupsd_etc_t:dir { getattr open search };
+allow user_t cupsd_etc_t:file { getattr ioctl lock open read };
+allow user_t cupsd_runtime_t:dir { getattr open search };
+allow user_t cupsd_runtime_t:sock_file { append getattr open read write };
+allow user_t cupsd_rw_etc_t:dir { getattr open search };
+allow user_t cupsd_rw_etc_t:file { getattr ioctl lock open read };
+allow user_t cupsd_t:unix_stream_socket connectto;
+allow user_t daemon:association recvfrom;
+allow user_t daemon:peer recv;
+allow user_t daemon:tcp_socket recvfrom;
+allow user_t daemon:udp_socket recvfrom;
+allow user_t dbusd_etc_t:dir { getattr ioctl lock open read search };
+allow user_t dbusd_etc_t:file { getattr ioctl lock open read };
+allow user_t dbusd_exec_t:file { execute getattr ioctl map open read };
+allow user_t default_context_t:dir { getattr ioctl lock open read search };
+allow user_t default_context_t:file { getattr ioctl lock open read };
+allow user_t device_t:dir { getattr ioctl lock open read search };
+allow user_t device_t:dir { getattr ioctl lock open read search }; [ user_ttyfile_stat ]:True
+allow user_t device_t:dir { getattr ioctl lock open read search }; [ user_write_removable ]:False
+allow user_t device_t:dir { getattr ioctl lock open read search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr ioctl lock open read search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ user_direct_mouse ]:True
+allow user_t device_t:dir { getattr open search }; [ user_ttyfile_stat ]:True
+allow user_t device_t:dir { getattr open search }; [ user_ttyfile_stat ]:True
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:False
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:False
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:False
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ user_write_removable ]:True
+allow user_t device_t:dir { getattr open search }; [ xserver_allow_dri ]:True
+allow user_t device_t:lnk_file { getattr read };
+allow user_t device_t:lnk_file { getattr read }; [ user_ttyfile_stat ]:True
+allow user_t device_t:lnk_file { getattr read }; [ user_write_removable ]:False
+allow user_t device_t:lnk_file { getattr read }; [ user_write_removable ]:True
+allow user_t device_t:lnk_file { getattr read }; [ user_write_removable ]:True
+allow user_t devicekit_disk_t:dbus send_msg;
+allow user_t devicekit_power_t:dbus send_msg;
+allow user_t devpts_t:dir { getattr ioctl lock open read search };
+allow user_t devpts_t:filesystem getattr;
+allow user_t dirmngr_exec_t:file { execute getattr ioctl map open read };
+allow user_t dirmngr_t:dir { getattr ioctl lock open read search };
+allow user_t dirmngr_t:file { getattr ioctl lock open read };
+allow user_t dirmngr_t:lnk_file { getattr read };
+allow user_t dirmngr_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t dirmngr_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t dpkg_var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t dpkg_var_lib_t:file { getattr ioctl lock open read };
+allow user_t dpkg_var_lib_t:lnk_file { getattr read };
+allow user_t dri_device_t:chr_file map; [ xserver_allow_dri ]:True
+allow user_t dri_device_t:chr_file { append getattr ioctl lock open read write }; [ xserver_allow_dri ]:True
+allow user_t etc_runtime_t:file { getattr ioctl lock open read };
+allow user_t etc_runtime_t:lnk_file { getattr read };
+allow user_t etc_t:dir { getattr ioctl lock open read search watch };
+allow user_t etc_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t etc_t:lnk_file { getattr read watch };
+allow user_t event_device_t:chr_file { getattr ioctl lock open read };
+allow user_t evolution_alarm_exec_t:file { execute getattr ioctl map open read };
+allow user_t evolution_alarm_orbit_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_alarm_t:dbus send_msg;
+allow user_t evolution_alarm_t:dir { getattr ioctl lock open read search };
+allow user_t evolution_alarm_t:file { getattr ioctl lock open read };
+allow user_t evolution_alarm_t:lnk_file { getattr read };
+allow user_t evolution_alarm_t:process { getattr noatsecure ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t evolution_alarm_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_alarm_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_alarm_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_alarm_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_alarm_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exchange_exec_t:file { execute getattr ioctl map open read };
+allow user_t evolution_exchange_orbit_tmp_t:dir { getattr open search };
+allow user_t evolution_exchange_orbit_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exchange_t:dir { getattr ioctl lock open read search };
+allow user_t evolution_exchange_t:file { getattr ioctl lock open read };
+allow user_t evolution_exchange_t:lnk_file { getattr read };
+allow user_t evolution_exchange_t:process { getattr noatsecure ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t evolution_exchange_t:unix_stream_socket connectto;
+allow user_t evolution_exchange_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_exchange_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_exchange_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exchange_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exchange_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exchange_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_exec_t:file { execute getattr ioctl map open read };
+allow user_t evolution_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_orbit_tmp_t:dir { getattr open search };
+allow user_t evolution_orbit_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_server_exec_t:file { execute getattr ioctl map open read };
+allow user_t evolution_server_orbit_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_server_t:dir { getattr ioctl lock open read search };
+allow user_t evolution_server_t:file { getattr ioctl lock open read };
+allow user_t evolution_server_t:lnk_file { getattr read };
+allow user_t evolution_server_t:process { getattr noatsecure ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t evolution_t:dbus send_msg;
+allow user_t evolution_t:dir { getattr ioctl lock open read search };
+allow user_t evolution_t:file { getattr ioctl lock open read };
+allow user_t evolution_t:lnk_file { getattr read };
+allow user_t evolution_t:process { getattr noatsecure ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t evolution_t:unix_stream_socket connectto;
+allow user_t evolution_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_webcal_exec_t:file { execute getattr ioctl map open read };
+allow user_t evolution_webcal_t:dir { getattr ioctl lock open read search };
+allow user_t evolution_webcal_t:file { getattr ioctl lock open read };
+allow user_t evolution_webcal_t:lnk_file { getattr read };
+allow user_t evolution_webcal_t:process { getattr noatsecure ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t evolution_webcal_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t evolution_webcal_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_webcal_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_webcal_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t evolution_webcal_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t exim_exec_t:file { execute getattr ioctl map open read };
+allow user_t exim_t:process transition;
+allow user_t file_context_t:dir { getattr open search };
+allow user_t file_context_t:file { getattr ioctl lock map open read };
+allow user_t file_type:filesystem getattr;
+allow user_t filesystem_type:dir getattr;
+allow user_t filesystem_type:filesystem { getattr quotaget };
+allow user_t fixed_disk_device_t:blk_file getattr;
+allow user_t fonts_cache_t:dir { getattr ioctl lock open read search };
+allow user_t fonts_cache_t:file { getattr ioctl lock map open read };
+allow user_t fonts_cache_t:lnk_file { getattr read };
+allow user_t fonts_t:dir { getattr ioctl lock open read search watch };
+allow user_t fonts_t:file { getattr ioctl lock map open read };
+allow user_t fonts_t:lnk_file { getattr read };
+allow user_t games_exec_t:file { execute getattr ioctl map open read };
+allow user_t games_t:dir { getattr ioctl lock open read search };
+allow user_t games_t:file { getattr ioctl lock open read };
+allow user_t games_t:lnk_file { getattr read };
+allow user_t games_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t games_t:unix_stream_socket connectto;
+allow user_t games_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t games_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t games_tmpfs_t:dir { getattr open search };
+allow user_t games_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t games_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t games_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gconf_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gconf_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gconf_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gconf_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gconfd_exec_t:file { execute getattr ioctl map open read };
+allow user_t gconfd_t:dbus send_msg;
+allow user_t gconfd_t:dir { getattr ioctl lock open read search };
+allow user_t gconfd_t:file { getattr ioctl lock open read };
+allow user_t gconfd_t:lnk_file { getattr read };
+allow user_t gconfd_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t git_session_t:dir { getattr ioctl lock open read search };
+allow user_t git_session_t:file { getattr ioctl lock open read };
+allow user_t git_session_t:lnk_file { getattr read };
+allow user_t git_session_t:process transition; [ git_session_users ]:True
+allow user_t git_session_t:process { getattr ptrace sigchld sigkill signal signull sigstop };
+allow user_t git_user_content_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t git_user_content_t:file { append create execute execute_no_trans getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gitd_exec_t:file { execute execute_no_trans getattr ioctl lock map open read }; [ git_session_users ]:False
+allow user_t gitd_exec_t:file { execute getattr ioctl map open read }; [ git_session_users ]:True
+allow user_t gkeyringd_exec_t:file { execute getattr ioctl map open read };
+allow user_t gnome_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gnome_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gnome_keyring_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gnome_keyring_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gnome_keyring_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gnome_keyring_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_agent_exec_t:file { execute getattr ioctl map open read };
+allow user_t gpg_agent_t:dir { getattr ioctl lock open read search };
+allow user_t gpg_agent_t:fd use;
+allow user_t gpg_agent_t:file { getattr ioctl lock open read };
+allow user_t gpg_agent_t:lnk_file { getattr read };
+allow user_t gpg_agent_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t gpg_agent_t:unix_stream_socket connectto; [ ssh_use_gpg_agent ]:True
+allow user_t gpg_agent_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gpg_agent_tmp_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t gpg_agent_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_agent_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_agent_tmp_t:sock_file { append getattr open write }; [ ssh_use_gpg_agent ]:True
+allow user_t gpg_exec_t:file { execute getattr ioctl map open read };
+allow user_t gpg_helper_t:dir { getattr ioctl lock open read search };
+allow user_t gpg_helper_t:file { getattr ioctl lock open read };
+allow user_t gpg_helper_t:lnk_file { getattr read };
+allow user_t gpg_helper_t:process { getattr ptrace sigchld sigkill signal signull sigstop };
+allow user_t gpg_pinentry_t:dbus send_msg;
+allow user_t gpg_pinentry_t:dir { getattr ioctl lock open read search };
+allow user_t gpg_pinentry_t:file { getattr ioctl lock open read };
+allow user_t gpg_pinentry_t:lnk_file { getattr read };
+allow user_t gpg_pinentry_t:process { getattr ptrace sigchld sigkill signal signull sigstop };
+allow user_t gpg_pinentry_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_runtime_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t gpg_secret_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t gpg_secret_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t gpg_secret_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_secret_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_secret_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t gpg_t:dir { getattr ioctl lock open read search };
+allow user_t gpg_t:file { getattr ioctl lock open read };
+allow user_t gpg_t:lnk_file { getattr read };
+allow user_t gpg_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t home_root_t:dir { getattr ioctl lock open read search };
+allow user_t home_root_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t home_root_t:lnk_file { getattr read };
+allow user_t home_root_t:lnk_file { getattr read }; [ ssh_use_gpg_agent ]:True
+allow user_t httpd_user_content_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t httpd_user_content_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_content_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_htaccess_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_ra_content_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t httpd_user_ra_content_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_ra_content_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_rw_content_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t httpd_user_rw_content_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_rw_content_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_script_exec_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t httpd_user_script_exec_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_script_exec_t:file { execute getattr ioctl map open read }; [ httpd_enable_cgi ]:True
+allow user_t httpd_user_script_exec_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t httpd_user_script_t:process transition; [ httpd_enable_cgi ]:True
+allow user_t httpd_user_script_t:process transition; [ httpd_unified && httpd_enable_cgi ]:True
+allow user_t httpdcontent:file { execute getattr ioctl map open read }; [ httpd_unified && httpd_enable_cgi ]:True
+allow user_t iceauth_exec_t:file { execute getattr ioctl map open read };
+allow user_t iceauth_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t iceauth_t:dir { getattr ioctl lock open read search };
+allow user_t iceauth_t:file { getattr ioctl lock open read };
+allow user_t iceauth_t:lnk_file { getattr read };
+allow user_t iceauth_t:process { getattr transition };
+allow user_t inetd_t:fd use;
+allow user_t inetd_t:tcp_socket { accept append bind connect getattr getopt ioctl listen read setattr setopt shutdown write };
+allow user_t init_t:dbus send_msg;
+allow user_t init_t:dir { getattr open search };
+allow user_t init_t:fd use;
+allow user_t init_t:file { getattr ioctl lock open read };
+allow user_t init_t:lnk_file { getattr read };
+allow user_t init_t:process { sigchld signull };
+allow user_t init_t:system status;
+allow user_t init_t:unix_stream_socket { getattr ioctl read write };
+allow user_t initrc_runtime_t:file { getattr ioctl lock open read };
+allow user_t innd_etc_t:dir { getattr ioctl lock open read search };
+allow user_t innd_etc_t:file { getattr ioctl lock open read };
+allow user_t innd_etc_t:lnk_file { getattr read };
+allow user_t innd_var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t innd_var_lib_t:file { getattr ioctl lock open read };
+allow user_t inotifyfs_t:dir { getattr ioctl lock open read search };
+allow user_t ipsec_spd_t:association polmatch;
+allow user_t irc_exec_t:file { execute getattr ioctl map open read };
+allow user_t irc_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t irc_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t irc_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t irc_log_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t irc_log_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t irc_log_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t irc_t:dir { getattr ioctl lock open read search };
+allow user_t irc_t:file { getattr ioctl lock open read };
+allow user_t irc_t:lnk_file { getattr read };
+allow user_t irc_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t irc_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t irc_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t irc_tmp_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t java_exec_t:file { execute getattr ioctl map open read };
+allow user_t java_t:dir { getattr ioctl lock open read search };
+allow user_t java_t:file { getattr ioctl lock open read };
+allow user_t java_t:lnk_file { getattr read };
+allow user_t java_t:process { getattr noatsecure ptrace rlimitinh sigchld siginh sigkill signal signull sigstop transition };
+allow user_t java_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t java_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t java_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t java_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t java_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t java_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t kerberos_client_packet_t:packet recv; [ allow_kerberos ]:True
+allow user_t kerberos_client_packet_t:packet send; [ allow_kerberos ]:True
+allow user_t kerberos_port_t:tcp_socket name_connect; [ allow_kerberos ]:True
+allow user_t kernel_t:system ipc_info;
+allow user_t kernel_t:system syslog_read; [ user_dmesg ]:True
+allow user_t kerneloops_t:dbus send_msg;
+allow user_t krb5_conf_t:file { getattr ioctl lock open read };
+allow user_t krb5_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t krb5_host_rcache_t:file getattr; [ allow_kerberos ]:True
+allow user_t ld_so_t:file { execute execute_no_trans getattr ioctl map open read };
+allow user_t ld_so_t:lnk_file { getattr read };
+allow user_t lib_t:dir { getattr ioctl lock open read search };
+allow user_t lib_t:file { execute execute_no_trans getattr ioctl map open read };
+allow user_t lib_t:lnk_file { getattr read };
+allow user_t loadkeys_exec_t:file { execute getattr ioctl map open read };
+allow user_t loadkeys_t:process transition;
+allow user_t locale_t:dir { getattr ioctl lock open read search watch };
+allow user_t locale_t:file { getattr ioctl lock map open read watch };
+allow user_t locale_t:lnk_file { getattr read };
+allow user_t locate_var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t locate_var_lib_t:file { getattr ioctl lock open read };
+allow user_t lost_found_t:dir getattr;
+allow user_t lpr_exec_t:file { execute getattr ioctl map open read };
+allow user_t lpr_t:dir { getattr ioctl lock open read search };
+allow user_t lpr_t:file { getattr ioctl lock open read };
+allow user_t lpr_t:lnk_file { getattr read };
+allow user_t lpr_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t mail_home_rw_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mail_home_rw_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mail_home_rw_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t mail_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mail_spool_t:dir { getattr ioctl lock open read search };
+allow user_t mail_spool_t:file { append getattr ioctl lock open read write };
+allow user_t mail_spool_t:lnk_file { getattr read };
+allow user_t mailman_mail_exec_t:file { execute getattr ioctl map open read };
+allow user_t mailman_mail_t:process transition;
+allow user_t man_cache_t:dir { getattr ioctl lock open read search };
+allow user_t man_cache_t:file { getattr ioctl lock map open read };
+allow user_t man_cache_t:lnk_file { getattr read };
+allow user_t man_t:dir { getattr ioctl lock open read search };
+allow user_t man_t:file { getattr ioctl lock open read };
+allow user_t man_t:lnk_file { getattr read };
+allow user_t mencoder_exec_t:file { execute getattr ioctl map open read };
+allow user_t mencoder_t:dir { getattr ioctl lock open read search };
+allow user_t mencoder_t:file { getattr ioctl lock open read };
+allow user_t mencoder_t:lnk_file { getattr read };
+allow user_t mencoder_t:process { getattr getsched ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t mesa_shader_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mesa_shader_cache_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t misc_device_t:chr_file { append getattr ioctl lock open read write };
+allow user_t mnt_t:dir { getattr ioctl lock open read search };
+allow user_t modemmanager_t:dbus send_msg;
+allow user_t modules_conf_t:dir { getattr ioctl lock open read search };
+allow user_t modules_conf_t:file { getattr ioctl lock open read };
+allow user_t modules_conf_t:lnk_file { getattr read };
+allow user_t mouse_device_t:chr_file { getattr ioctl lock open read }; [ user_direct_mouse ]:True
+allow user_t mozilla_exec_t:file { execute getattr ioctl map open read };
+allow user_t mozilla_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_plugin_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_plugin_tmp_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_plugin_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_plugin_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_t:dbus send_msg;
+allow user_t mozilla_t:dir { getattr ioctl lock open read search };
+allow user_t mozilla_t:fd use;
+allow user_t mozilla_t:file { getattr ioctl lock open read };
+allow user_t mozilla_t:lnk_file { getattr read };
+allow user_t mozilla_t:process { getattr noatsecure ptrace rlimitinh sigchld siginh sigkill signal signull sigstop transition };
+allow user_t mozilla_t:shm { associate getattr lock read unix_read unix_write write };
+allow user_t mozilla_t:unix_stream_socket connectto;
+allow user_t mozilla_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mozilla_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mozilla_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mpd_user_data_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mpd_user_data_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mpd_user_data_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_exec_t:file { execute getattr ioctl map open read };
+allow user_t mplayer_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t mplayer_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_t:dir { getattr ioctl lock open read search };
+allow user_t mplayer_t:file { getattr ioctl lock open read };
+allow user_t mplayer_t:lnk_file { getattr read };
+allow user_t mplayer_t:process { getattr getsched ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t mplayer_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t mplayer_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mta_user_agent:dir { getattr ioctl lock open read search };
+allow user_t mta_user_agent:file { getattr ioctl lock open read };
+allow user_t mta_user_agent:lnk_file { getattr read };
+allow user_t mta_user_agent:process { getattr ptrace sigchld sigkill signal signull sigstop };
+allow user_t mysqld_db_t:dir { getattr open search }; [ allow_user_mysql_connect ]:True
+allow user_t mysqld_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t mysqld_runtime_t:dir { getattr open search }; [ allow_user_mysql_connect ]:True
+allow user_t mysqld_runtime_t:sock_file { append getattr open write }; [ allow_user_mysql_connect ]:True
+allow user_t mysqld_t:unix_stream_socket connectto; [ allow_user_mysql_connect ]:True
+allow user_t net_conf_t:dir { getattr ioctl lock open read search };
+allow user_t net_conf_t:file { getattr ioctl lock open read };
+allow user_t netif_t:netif egress; [ allow_kerberos ]:True
+allow user_t netif_t:netif ingress; [ allow_kerberos ]:True
+allow user_t netif_t:netif { egress ingress };
+allow user_t netif_t:netif { egress ingress }; [ allow_kerberos ]:True
+allow user_t netlabel_peer_t:peer recv;
+allow user_t netlabel_peer_t:peer recv; [ allow_kerberos ]:True
+allow user_t netlabel_peer_t:peer recv; [ allow_user_postgresql_connect ]:True
+allow user_t netlabel_peer_t:rawip_socket recvfrom;
+allow user_t netlabel_peer_t:rawip_socket recvfrom; [ allow_kerberos ]:True
+allow user_t netlabel_peer_t:tcp_socket recvfrom;
+allow user_t netlabel_peer_t:tcp_socket recvfrom; [ allow_kerberos ]:True
+allow user_t netlabel_peer_t:tcp_socket recvfrom; [ allow_user_postgresql_connect ]:True
+allow user_t netlabel_peer_t:udp_socket recvfrom;
+allow user_t netlabel_peer_t:udp_socket recvfrom; [ allow_kerberos ]:True
+allow user_t newrole_exec_t:file { execute getattr ioctl map open read };
+allow user_t newrole_t:process transition;
+allow user_t news_spool_t:dir { getattr ioctl lock open read search };
+allow user_t news_spool_t:file { getattr ioctl lock open read };
+allow user_t news_spool_t:lnk_file { getattr read };
+allow user_t nfs_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { add_name getattr ioctl lock open read remove_name search write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { getattr ioctl lock open read search }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:dir { getattr open search }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:fifo_file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:file { execute execute_no_trans getattr ioctl map open read }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write }; [ use_nfs_home_dirs ]:True
+allow user_t nfs_t:sock_file { append create getattr ioctl link lock open read rename setattr unlink write }; [ use_nfs_home_dirs ]:True
+allow user_t nfsd_rw_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write };
+allow user_t nfsd_rw_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t nfsd_rw_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t node_t:node recvfrom; [ allow_kerberos ]:True
+allow user_t node_t:node sendto; [ allow_kerberos ]:True
+allow user_t node_t:node { recvfrom sendto };
+allow user_t node_t:node { recvfrom sendto }; [ allow_kerberos ]:True
+allow user_t node_t:tcp_socket node_bind; [ user_tcp_server ]:True
+allow user_t node_t:udp_socket node_bind;
+allow user_t node_t:udp_socket node_bind; [ user_udp_server ]:True
+allow user_t noxattrfs:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:dir { add_name getattr ioctl lock open read remove_name search write }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:dir { add_name getattr ioctl lock open read remove_name search write }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:dir { getattr ioctl lock open read search }; [ user_rw_noexattrfile ]:False
+allow user_t noxattrfs:dir { getattr ioctl lock open read search }; [ user_rw_noexattrfile ]:False
+allow user_t noxattrfs:dir { getattr ioctl lock open read search }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:dir { getattr ioctl lock open read search }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:dir { getattr open search }; [ user_rw_noexattrfile ]:False
+allow user_t noxattrfs:dir { getattr open search }; [ user_rw_noexattrfile ]:False
+allow user_t noxattrfs:file { append create getattr ioctl link lock open read rename setattr unlink write }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:file { execute execute_no_trans getattr ioctl lock map open read }; [ user_exec_noexattrfile ]:True
+allow user_t noxattrfs:file { getattr ioctl lock open read }; [ user_rw_noexattrfile ]:False
+allow user_t noxattrfs:lnk_file { create getattr ioctl link lock read rename setattr unlink write }; [ user_rw_noexattrfile ]:True
+allow user_t noxattrfs:lnk_file { getattr read }; [ user_rw_noexattrfile ]:False
+allow user_t ocsp_client_packet_t:packet recv; [ allow_kerberos ]:True
+allow user_t ocsp_client_packet_t:packet send; [ allow_kerberos ]:True
+allow user_t ocsp_port_t:tcp_socket name_connect; [ allow_kerberos ]:True
+allow user_t oidentd_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pam_exec_t:file { execute getattr ioctl map open read };
+allow user_t pam_t:process transition;
+allow user_t pam_var_console_t:dir { getattr open search };
+allow user_t passwd_exec_t:file { execute getattr ioctl map open read };
+allow user_t passwd_t:process transition;
+allow user_t pcscd_runtime_t:dir { getattr open search };
+allow user_t pcscd_runtime_t:dir { getattr open search }; [ allow_kerberos ]:True
+allow user_t pcscd_runtime_t:file { getattr ioctl lock open read };
+allow user_t pcscd_runtime_t:sock_file { append getattr open write };
+allow user_t pcscd_runtime_t:sock_file { append getattr open write }; [ allow_kerberos ]:True
+allow user_t pcscd_t:unix_stream_socket connectto;
+allow user_t pcscd_t:unix_stream_socket connectto; [ allow_kerberos ]:True
+allow user_t ping_exec_t:file { execute getattr ioctl map open read }; [ user_ping ]:True
+allow user_t ping_t:process transition; [ user_ping ]:True
+allow user_t policykit_t:dbus send_msg;
+allow user_t port_t:tcp_socket name_bind; [ user_tcp_server ]:True
+allow user_t port_t:udp_socket name_bind;
+allow user_t port_t:udp_socket name_bind; [ user_udp_server ]:True
+allow user_t port_type:tcp_socket name_connect;
+allow user_t postgresql_client_packet_t:packet recv; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_client_packet_t:packet send; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_port_t:tcp_socket name_connect; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_runtime_t:dir { getattr open search }; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_runtime_t:sock_file { append getattr open write }; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_t:association recvfrom; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_t:peer recv; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_t:tcp_socket recvfrom; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_t:unix_stream_socket connectto; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_tmp_t:dir { getattr open search }; [ allow_user_postgresql_connect ]:True
+allow user_t postgresql_tmp_t:sock_file { append getattr open write }; [ allow_user_postgresql_connect ]:True
+allow user_t power_device_t:chr_file { append getattr ioctl lock open read write };
+allow user_t ppp_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pppd_exec_t:file { execute getattr ioctl map open read }; [ pppd_for_user ]:True
+allow user_t pppd_t:process transition; [ pppd_for_user ]:True
+allow user_t privfd:fd use;
+allow user_t proc_net_t:dir { getattr ioctl lock open read search };
+allow user_t proc_net_t:file { getattr ioctl lock open read };
+allow user_t proc_net_t:lnk_file { getattr read };
+allow user_t proc_t:dir { getattr ioctl lock open read search };
+allow user_t proc_t:file { getattr ioctl lock open read };
+allow user_t proc_t:lnk_file { getattr read };
+allow user_t ptal_runtime_t:dir { getattr open search };
+allow user_t ptal_runtime_t:sock_file { append getattr open write };
+allow user_t ptal_t:unix_stream_socket connectto;
+allow user_t ptmx_t:chr_file { append getattr ioctl lock open read write };
+allow user_t public_content_rw_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t public_content_rw_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t public_content_rw_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t public_content_t:dir { getattr ioctl lock open read search };
+allow user_t public_content_t:file { getattr ioctl lock open read };
+allow user_t public_content_t:lnk_file { getattr read };
+allow user_t pulseaudio_exec_t:file { execute getattr ioctl map open read };
+allow user_t pulseaudio_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pulseaudio_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pulseaudio_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t pulseaudio_t:dir { getattr ioctl lock open read search };
+allow user_t pulseaudio_t:fd use;
+allow user_t pulseaudio_t:file { getattr ioctl lock open read };
+allow user_t pulseaudio_t:lnk_file { getattr read };
+allow user_t pulseaudio_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t pulseaudio_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pulseaudio_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pulseaudio_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pulseaudio_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pulseaudio_tmpfs_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pulseaudio_tmpfsfile:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pulseaudio_tmpfsfile:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pyzor_exec_t:file { execute getattr ioctl map open read };
+allow user_t pyzor_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pyzor_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t pyzor_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t pyzor_t:dir { getattr ioctl lock open read search };
+allow user_t pyzor_t:file { getattr ioctl lock open read };
+allow user_t pyzor_t:lnk_file { getattr read };
+allow user_t pyzor_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t pyzor_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t pyzor_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t random_device_t:chr_file { getattr ioctl lock open read };
+allow user_t razor_exec_t:file { execute getattr ioctl map open read };
+allow user_t razor_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t razor_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t razor_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t razor_t:dir { getattr ioctl lock open read search };
+allow user_t razor_t:file { getattr ioctl lock open read };
+allow user_t razor_t:lnk_file { getattr read };
+allow user_t razor_t:process { getattr signal transition };
+allow user_t razor_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t razor_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t readable_t:dir { getattr ioctl lock open read search };
+allow user_t readable_t:fifo_file { getattr ioctl lock open read };
+allow user_t readable_t:file { getattr ioctl lock open read };
+allow user_t readable_t:lnk_file { getattr read };
+allow user_t readable_t:sock_file { getattr open read };
+allow user_t removable_device_t:blk_file { append getattr ioctl lock open write }; [ user_write_removable ]:True
+allow user_t removable_device_t:blk_file { getattr ioctl lock open read }; [ user_write_removable ]:False
+allow user_t removable_device_t:blk_file { getattr ioctl lock open read }; [ user_write_removable ]:True
+allow user_t rssh_exec_t:file { execute getattr ioctl map open read };
+allow user_t rssh_ro_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t rssh_ro_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t rssh_rw_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t rssh_rw_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t rssh_t:dir { getattr ioctl lock open read search };
+allow user_t rssh_t:file { getattr ioctl lock open read };
+allow user_t rssh_t:lnk_file { getattr read };
+allow user_t rssh_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t rtkit_daemon_t:dbus send_msg;
+allow user_t samba_runtime_t:dir { getattr open search };
+allow user_t samba_var_t:dir { getattr open search };
+allow user_t screen_exec_t:file { execute getattr ioctl map open read };
+allow user_t screen_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t screen_home_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t screen_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t screen_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t screen_runtime_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write };
+allow user_t screen_runtime_t:fifo_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t screen_runtime_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t screen_runtime_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t screen_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t screen_tmp_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t screen_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t security_t:dir { getattr ioctl lock open read search };
+allow user_t security_t:file { append getattr ioctl lock open read write };
+allow user_t security_t:filesystem getattr;
+allow user_t security_t:security { check_context compute_av compute_create compute_relabel compute_user };
+allow user_t selinux_config_t:dir { getattr ioctl lock open read search };
+allow user_t selinux_config_t:file { getattr ioctl lock open read };
+allow user_t selinux_config_t:lnk_file { getattr read };
+allow user_t sendmail_exec_t:file { execute getattr ioctl map open read };
+allow user_t sendmail_exec_t:lnk_file { getattr read };
+allow user_t sepgsql_ranged_proc_t:process transition;
+allow user_t sepgsql_trusted_proc_t:process transition;
+allow user_t session_dbusd_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t session_dbusd_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t session_dbusd_runtime_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t session_dbusd_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t session_dbusd_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t setfiles_exec_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t setroubleshoot_runtime_t:dir { getattr open search };
+allow user_t setroubleshoot_runtime_t:sock_file { append getattr open read write };
+allow user_t setroubleshootd_t:unix_stream_socket connectto;
+allow user_t shell_exec_t:file { entrypoint execute execute_no_trans getattr ioctl lock map open read };
+allow user_t slrnpull_spool_t:dir { getattr open search };
+allow user_t sound_device_t:chr_file { append getattr ioctl lock map open read write };
+allow user_t spamassassin_exec_t:file { execute getattr ioctl map open read };
+allow user_t spamassassin_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t spamassassin_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamassassin_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamassassin_t:dir { getattr ioctl lock open read search };
+allow user_t spamassassin_t:file { getattr ioctl lock open read };
+allow user_t spamassassin_t:lnk_file { getattr read };
+allow user_t spamassassin_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t spamassassin_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t spamassassin_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamassassin_tmp_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamc_exec_t:file { execute getattr ioctl map open read };
+allow user_t spamc_t:dir { getattr ioctl lock open read search };
+allow user_t spamc_t:file { getattr ioctl lock open read };
+allow user_t spamc_t:lnk_file { getattr read };
+allow user_t spamc_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t spamc_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t spamc_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamc_tmp_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamd_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t spamd_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t spamd_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t ssh_agent_exec_t:file { execute getattr ioctl map open read };
+allow user_t ssh_agent_tmp_t:dir { getattr open search };
+allow user_t ssh_agent_tmp_t:sock_file { append getattr open write };
+allow user_t ssh_exec_t:file { execute getattr ioctl map open read };
+allow user_t ssh_home_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t ssh_home_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t ssh_home_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t ssh_home_t:sock_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t ssh_server:unix_stream_socket { accept append bind connect getattr getopt ioctl listen read setattr setopt shutdown write };
+allow user_t ssh_t:dir { getattr ioctl lock open read search };
+allow user_t ssh_t:file { getattr ioctl lock open read };
+allow user_t ssh_t:lnk_file { getattr read };
+allow user_t ssh_t:process { getattr signal transition };
+allow user_t sssd_public_t:dir { getattr ioctl lock open read search };
+allow user_t sssd_public_t:file { getattr ioctl lock open read };
+allow user_t sssd_var_lib_t:dir { getattr open search };
+allow user_t su_exec_t:file { execute getattr ioctl map open read };
+allow user_t sudo_exec_t:file { execute getattr ioctl map open read };
+allow user_t sysctl_crypto_t:dir { getattr ioctl lock open read search };
+allow user_t sysctl_crypto_t:file { getattr ioctl lock open read };
+allow user_t sysctl_dev_t:dir { getattr ioctl lock open read search };
+allow user_t sysctl_dev_t:file { getattr ioctl lock open read };
+allow user_t sysctl_kernel_t:dir { getattr ioctl lock open read search };
+allow user_t sysctl_kernel_t:file { getattr ioctl lock open read };
+allow user_t sysctl_net_t:dir { getattr ioctl lock open read search };
+allow user_t sysctl_net_t:file { getattr ioctl lock open read };
+allow user_t sysctl_t:dir { getattr open search };
+allow user_t sysctl_vm_overcommit_t:file { getattr ioctl lock open read };
+allow user_t sysctl_vm_t:dir { getattr open search };
+allow user_t sysfs_t:dir { getattr ioctl lock open read search };
+allow user_t sysfs_t:file { getattr ioctl lock open read };
+allow user_t sysfs_t:filesystem getattr;
+allow user_t sysfs_t:lnk_file { getattr read };
+allow user_t system_dbusd_runtime_t:dir { getattr ioctl lock open read search };
+allow user_t system_dbusd_runtime_t:sock_file { append getattr open read write };
+allow user_t system_dbusd_t:dbus { acquire_svc send_msg };
+allow user_t system_dbusd_t:unix_stream_socket connectto;
+allow user_t system_dbusd_var_lib_t:dir { getattr open search };
+allow user_t system_dbusd_var_lib_t:file { getattr ioctl lock open read };
+allow user_t systemd_conf_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t systemd_conf_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_conf_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_conf_home_t:service { reload start status stop };
+allow user_t systemd_data_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t systemd_data_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_data_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_hostnamed_t:dbus send_msg;
+allow user_t systemd_journal_t:dir { getattr ioctl lock open read search };
+allow user_t systemd_journal_t:file { getattr ioctl map open read };
+allow user_t systemd_logind_inhibit_runtime_t:fifo_file write;
+allow user_t systemd_logind_t:dbus send_msg;
+allow user_t systemd_logind_t:fd use;
+allow user_t systemd_machined_t:dbus send_msg;
+allow user_t systemd_machined_t:fd use;
+allow user_t systemd_resolved_runtime_t:dir { getattr open search };
+allow user_t systemd_resolved_runtime_t:file { getattr ioctl lock open read };
+allow user_t systemd_run_exec_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t systemd_user_runtime_notify_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_user_runtime_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t systemd_user_runtime_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_user_runtime_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_user_runtime_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_user_runtime_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t systemd_user_runtime_unit_t:dir { getattr ioctl lock open read search };
+allow user_t systemd_user_runtime_unit_t:file { getattr ioctl lock open read };
+allow user_t systemd_user_runtime_unit_t:lnk_file { getattr read };
+allow user_t systemd_user_runtime_unit_t:service { reload start status stop };
+allow user_t systemd_user_unit_t:dir { getattr ioctl lock open read search };
+allow user_t systemd_user_unit_t:file { getattr ioctl lock open read };
+allow user_t systemd_user_unit_t:lnk_file { getattr read };
+allow user_t systemd_user_unit_t:service { reload start status stop };
+allow user_t telepathy_domain:dir { getattr ioctl lock open read search };
+allow user_t telepathy_domain:file { getattr ioctl lock open read };
+allow user_t telepathy_domain:lnk_file { getattr read };
+allow user_t telepathy_domain:process { getattr ptrace sigchld sigkill signal signull sigstop };
+allow user_t telepathy_gabble_t:unix_stream_socket connectto;
+allow user_t telepathy_gabble_tmp_t:dir { getattr open search };
+allow user_t telepathy_gabble_tmp_t:sock_file { append getattr open write };
+allow user_t telepathy_gabble_xdg_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_gabble_xdg_cache_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_logger_xdg_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_logger_xdg_cache_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_logger_xdg_data_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_logger_xdg_data_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_mission_control_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_mission_control_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_mission_control_t:dbus send_msg;
+allow user_t telepathy_mission_control_xdg_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_mission_control_xdg_cache_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_mission_control_xdg_data_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_mission_control_xdg_data_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_msn_t:unix_stream_socket connectto;
+allow user_t telepathy_msn_tmp_t:dir { getattr open search };
+allow user_t telepathy_msn_tmp_t:sock_file { append getattr open write };
+allow user_t telepathy_salut_t:unix_stream_socket connectto;
+allow user_t telepathy_salut_tmp_t:dir { getattr open search };
+allow user_t telepathy_salut_tmp_t:sock_file { append getattr open write };
+allow user_t telepathy_sunshine_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_sunshine_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_tmp_content:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_tmp_content:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_tmp_content:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_xdg_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_xdg_cache_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t telepathy_xdg_data_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t telepathy_xdg_data_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t tetex_data_t:dir { getattr ioctl lock open read search };
+allow user_t tetex_data_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t tetex_data_t:lnk_file { getattr read };
+allow user_t thunderbird_exec_t:file { execute getattr ioctl map open read };
+allow user_t thunderbird_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t thunderbird_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t thunderbird_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t thunderbird_t:dir { getattr ioctl lock open read search };
+allow user_t thunderbird_t:file { getattr ioctl lock open read };
+allow user_t thunderbird_t:lnk_file { getattr read };
+allow user_t thunderbird_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t thunderbird_t:unix_stream_socket connectto;
+allow user_t thunderbird_tmpfs_t:dir { getattr open search };
+allow user_t thunderbird_tmpfs_t:sock_file { append getattr open write };
+allow user_t tmp_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t tmp_t:dir { getattr open search }; [ allow_user_postgresql_connect ]:True
+allow user_t tmpfs_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t traceroute_exec_t:file { execute getattr ioctl map open read }; [ user_ping ]:True
+allow user_t traceroute_t:process transition; [ user_ping ]:True
+allow user_t ttynode:chr_file getattr; [ user_ttyfile_stat ]:True
+allow user_t tvtime_exec_t:file { execute getattr ioctl map open read };
+allow user_t tvtime_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t tvtime_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_t:dir { getattr ioctl lock open read search };
+allow user_t tvtime_t:file { getattr ioctl lock open read };
+allow user_t tvtime_t:lnk_file { getattr read };
+allow user_t tvtime_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t tvtime_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t tvtime_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t tvtime_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t udev_runtime_t:dir { getattr open search };
+allow user_t udev_runtime_t:file { getattr ioctl lock open read };
+allow user_t uml_exec_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t uml_exec_t:file { append create execute getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_ro_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t uml_ro_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_ro_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_ro_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_ro_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_rw_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t uml_rw_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_rw_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_rw_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_rw_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_t:dir { getattr ioctl lock open read search };
+allow user_t uml_t:file { getattr ioctl lock open read };
+allow user_t uml_t:lnk_file { getattr read };
+allow user_t uml_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t uml_t:unix_dgram_socket sendto;
+allow user_t uml_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t uml_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_tmpfs_t:dir { getattr open search };
+allow user_t uml_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t uml_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t unpriv_userdomain:fd use;
+allow user_t unreserved_port_type:tcp_socket name_bind; [ user_tcp_server ]:True
+allow user_t unreserved_port_type:udp_socket name_bind; [ user_udp_server ]:True
+allow user_t urandom_device_t:chr_file { getattr ioctl lock open read };
+allow user_t usb_device_t:chr_file { append getattr ioctl lock open read write }; [ user_write_removable ]:True
+allow user_t usb_device_t:chr_file { getattr ioctl lock open read }; [ user_write_removable ]:False
+allow user_t usbfs_t:dir { getattr ioctl lock open read search };
+allow user_t usbfs_t:file { append getattr ioctl lock open read write };
+allow user_t usbfs_t:lnk_file { getattr read };
+allow user_t user_cert_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_cert_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t user_cert_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t user_consolehelper_t:dir { getattr ioctl lock open read search };
+allow user_t user_consolehelper_t:file { getattr ioctl lock open read };
+allow user_t user_consolehelper_t:lnk_file { getattr read };
+allow user_t user_consolehelper_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_cron_spool_t:file entrypoint; [ cron_userdomain_transition ]:True
+allow user_t user_cron_spool_t:file { append entrypoint getattr ioctl lock read write };
+allow user_t user_crontab_t:dir { getattr ioctl lock open read search };
+allow user_t user_crontab_t:file { getattr ioctl lock open read };
+allow user_t user_crontab_t:lnk_file { getattr read };
+allow user_t user_crontab_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_dbusd_t:dbus { acquire_svc send_msg };
+allow user_t user_dbusd_t:dir { getattr ioctl lock open read search };
+allow user_t user_dbusd_t:fd use;
+allow user_t user_dbusd_t:file { getattr ioctl lock open read };
+allow user_t user_dbusd_t:lnk_file { getattr read };
+allow user_t user_dbusd_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_dbusd_t:unix_stream_socket { append bind connect connectto getattr getopt ioctl read setattr setopt shutdown write };
+allow user_t user_devpts_t:chr_file { append getattr ioctl lock open read setattr write };
+allow user_t user_fonts_cache_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_fonts_cache_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t user_fonts_config_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_fonts_config_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t user_fonts_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t user_fonts_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t user_gkeyringd_t:dbus send_msg;
+allow user_t user_gkeyringd_t:dir { getattr ioctl lock open read search };
+allow user_t user_gkeyringd_t:file { getattr ioctl lock open read };
+allow user_t user_gkeyringd_t:lnk_file { getattr read };
+allow user_t user_gkeyringd_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_gkeyringd_t:unix_stream_socket connectto;
+allow user_t user_home_dir_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_home_dir_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t user_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_home_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_home_t:file { append create entrypoint execute execute_no_trans getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_home_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+allow user_t user_input_xevent_t:x_event { receive send };
+allow user_t user_input_xevent_t:x_synthetic_event { receive send };
+allow user_t user_mail_t:dir { getattr ioctl lock open read search };
+allow user_t user_mail_t:file { getattr ioctl lock open read };
+allow user_t user_mail_t:lnk_file { getattr read };
+allow user_t user_mail_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_mail_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_mail_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t user_runtime_root_t:dir { getattr open search };
+allow user_t user_runtime_root_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t user_runtime_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t user_runtime_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t user_runtime_t:sock_file write;
+allow user_t user_screen_t:dir { getattr ioctl lock open read search };
+allow user_t user_screen_t:file { getattr ioctl lock open read };
+allow user_t user_screen_t:lnk_file { getattr read };
+allow user_t user_screen_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_sepgsql_blob_t:db_blob { create drop export getattr import read setattr write };
+allow user_t user_sepgsql_proc_exec_t:db_procedure { create drop setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_proc_exec_t:db_procedure { execute getattr };
+allow user_t user_sepgsql_schema_t:db_schema { add_name getattr remove_name search };
+allow user_t user_sepgsql_schema_t:db_schema { create drop setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_seq_t:db_sequence { create drop set_value setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_seq_t:db_sequence { get_value getattr next_value };
+allow user_t user_sepgsql_sysobj_t:db_tuple { delete insert update }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_sysobj_t:db_tuple { select use };
+allow user_t user_sepgsql_table_t:db_column { create drop setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_table_t:db_column { getattr insert select update };
+allow user_t user_sepgsql_table_t:db_table { create drop setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_table_t:db_table { delete getattr insert lock select update };
+allow user_t user_sepgsql_table_t:db_tuple { delete insert select update };
+allow user_t user_sepgsql_view_t:db_view { create drop setattr }; [ sepgsql_enable_users_ddl ]:True
+allow user_t user_sepgsql_view_t:db_view { expand getattr };
+allow user_t user_ssh_agent_t:dir { getattr ioctl lock open read search };
+allow user_t user_ssh_agent_t:fd use;
+allow user_t user_ssh_agent_t:fifo_file { append getattr ioctl lock read write };
+allow user_t user_ssh_agent_t:file { getattr ioctl lock open read };
+allow user_t user_ssh_agent_t:lnk_file { getattr read };
+allow user_t user_ssh_agent_t:process { getattr sigchld signal transition };
+allow user_t user_ssh_agent_t:unix_stream_socket connectto;
+allow user_t user_su_t:dir { getattr ioctl lock open read search };
+allow user_t user_su_t:fd use;
+allow user_t user_su_t:fifo_file { append getattr ioctl lock read write };
+allow user_t user_su_t:file { getattr ioctl lock open read };
+allow user_t user_su_t:lnk_file { getattr read };
+allow user_t user_su_t:process { getattr sigchld signal transition };
+allow user_t user_sudo_t:fd use;
+allow user_t user_sudo_t:fifo_file { append getattr ioctl lock open read write };
+allow user_t user_sudo_t:process { sigchld sigkill signal signull sigstop transition };
+allow user_t user_systemd_t:fd use;
+allow user_t user_systemd_t:fifo_file { append getattr ioctl lock read write };
+allow user_t user_systemd_t:process signal;
+allow user_t user_systemd_t:system { disable enable reload start status stop };
+allow user_t user_systemd_t:unix_stream_socket { accept append bind connect connectto getattr getopt ioctl listen read setattr setopt shutdown write };
+allow user_t user_t:association sendto; [ allow_user_postgresql_connect ]:True
+allow user_t user_t:association { recvfrom sendto };
+allow user_t user_t:capability net_bind_service; [ allow_ypbind ]:True
+allow user_t user_t:capability { chown fowner net_bind_service setgid sys_chroot };
+allow user_t user_t:capability2 syslog; [ user_dmesg ]:True
+allow user_t user_t:context contains;
+allow user_t user_t:dbus send_msg;
+allow user_t user_t:dir { getattr ioctl lock open read search };
+allow user_t user_t:fd use;
+allow user_t user_t:fifo_file { append getattr ioctl lock open read write };
+allow user_t user_t:file { append getattr ioctl lock open read write };
+allow user_t user_t:key { create link read search setattr view write };
+allow user_t user_t:lnk_file { getattr ioctl lock read };
+allow user_t user_t:msg { receive send };
+allow user_t user_t:msgq { associate create destroy enqueue getattr read setattr unix_read unix_write write };
+allow user_t user_t:netlink_audit_socket { append bind connect create getattr getopt ioctl nlmsg_relay read setattr setopt shutdown write };
+allow user_t user_t:netlink_kobject_uevent_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write };
+allow user_t user_t:netlink_route_socket { append bind connect create getattr getopt ioctl nlmsg_read read setattr setopt shutdown write };
+allow user_t user_t:netlink_selinux_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write };
+allow user_t user_t:peer recv;
+allow user_t user_t:process execmem; [ allow_execmem ]:True
+allow user_t user_t:process execstack; [ allow_execstack && allow_execmem ]:True
+allow user_t user_t:process { dyntransition fork getattr getcap getpgid getrlimit getsched getsession noatsecure ptrace rlimitinh setcap setfscreate setkeycreate setpgid setrlimit setsched setsockcreate share sigchld siginh sigkill signal signull sigstop transition };
+allow user_t user_t:rawip_socket recvfrom;
+allow user_t user_t:sem { associate create destroy getattr read setattr unix_read unix_write write };
+allow user_t user_t:shm { associate create destroy getattr lock read setattr unix_read unix_write write };
+allow user_t user_t:tcp_socket { accept append bind connect create getattr getopt ioctl listen read recvfrom setattr setopt shutdown write };
+allow user_t user_t:tcp_socket { accept append bind connect create getattr getopt ioctl listen read setattr setopt shutdown write }; [ allow_ypbind ]:True
+allow user_t user_t:tcp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ allow_kerberos ]:True
+allow user_t user_t:tcp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ allow_kerberos ]:True
+allow user_t user_t:tcp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ authlogin_nsswitch_use_ldap ]:True
+allow user_t user_t:udp_socket { append bind connect create getattr getopt ioctl read recvfrom setattr setopt shutdown write };
+allow user_t user_t:udp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ allow_kerberos ]:True
+allow user_t user_t:udp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ allow_kerberos ]:True
+allow user_t user_t:udp_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ allow_ypbind ]:True
+allow user_t user_t:unix_dgram_socket { append bind connect create getattr getopt ioctl read sendto setattr setopt shutdown write };
+allow user_t user_t:unix_stream_socket { accept append bind connect connectto create getattr getopt ioctl listen read setattr setopt shutdown write };
+allow user_t user_t:unix_stream_socket { accept append bind connect create getattr getopt ioctl listen read setattr setopt shutdown write }; [ nscd_use_shm ]:True
+allow user_t user_t:unix_stream_socket { accept append bind connect create getattr getopt ioctl listen read setattr setopt shutdown write }; [ nscd_use_shm ]:True
+allow user_t user_t:unix_stream_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ nscd_use_shm ]:False
+allow user_t user_t:unix_stream_socket { append bind connect create getattr getopt ioctl read setattr setopt shutdown write }; [ nscd_use_shm ]:False
+allow user_t user_t:x_client { destroy getattr manage };
+allow user_t user_t:x_colormap { add_color create destroy getattr install read remove_color uninstall use write };
+allow user_t user_t:x_cursor { create destroy getattr read setattr use write };
+allow user_t user_t:x_device { add bell create destroy force_cursor freeze get_property getattr getfocus grab list_property manage read remove set_property setattr setfocus use write };
+allow user_t user_t:x_drawable { add_child blend create destroy get_property getattr hide list_child list_property manage override read receive remove_child send set_property setattr show write };
+allow user_t user_t:x_gc { create destroy getattr setattr use };
+allow user_t user_t:x_keyboard { add bell create destroy force_cursor freeze get_property getattr getfocus grab list_property manage read remove set_property setattr setfocus use write };
+allow user_t user_t:x_pointer { add bell create destroy force_cursor freeze get_property getattr getfocus grab list_property manage read remove set_property setattr setfocus use write };
+allow user_t user_t:x_resource { read write };
+allow user_t user_tmp_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_tmp_t:fifo_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t user_tmp_t:file { append create execute execute_no_trans getattr ioctl link lock map open read rename setattr unlink write };
+allow user_t user_tmp_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t user_tmp_t:sock_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t user_tmpfs_t:dir { add_name create getattr ioctl link lock open read remove_name rename reparent rmdir search setattr unlink write };
+allow user_t user_tmpfs_t:fifo_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t user_tmpfs_t:file { append create execmod execute getattr ioctl link lock map open read rename setattr unlink write };
+allow user_t user_tmpfs_t:lnk_file { create getattr ioctl link lock read rename setattr unlink write };
+allow user_t user_tmpfs_t:sock_file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t user_tty_device_t:chr_file { append getattr ioctl lock open read setattr write };
+allow user_t user_userhelper_t:process transition;
+allow user_t user_wm_t:dbus send_msg;
+allow user_t user_wm_t:dir { getattr ioctl lock open read search };
+allow user_t user_wm_t:fd use;
+allow user_t user_wm_t:fifo_file write;
+allow user_t user_wm_t:file { getattr ioctl lock open read };
+allow user_t user_wm_t:lnk_file { getattr read };
+allow user_t user_wm_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t user_wm_t:unix_stream_socket connectto;
+allow user_t userhelper_exec_t:file { execute getattr ioctl map open read };
+allow user_t usr_t:dir { getattr ioctl lock open read search watch };
+allow user_t usr_t:dir { getattr open search }; [ pppd_for_user ]:True
+allow user_t usr_t:dir { getattr open search }; [ user_ping ]:True
+allow user_t usr_t:dir { getattr open search }; [ user_ping ]:True
+allow user_t usr_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t usr_t:lnk_file { getattr read };
+allow user_t utempter_exec_t:file { execute getattr ioctl map open read };
+allow user_t utempter_t:process transition;
+allow user_t var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t var_lib_t:file { getattr ioctl lock open read };
+allow user_t var_lock_t:dir { getattr open search };
+allow user_t var_lock_t:lnk_file { getattr read };
+allow user_t var_log_t:dir { getattr open search };
+allow user_t var_log_t:lnk_file { getattr read };
+allow user_t var_run_t:dir { getattr ioctl lock open read search watch };
+allow user_t var_run_t:dir { getattr open search }; [ allow_kerberos ]:True
+allow user_t var_run_t:dir { getattr open search }; [ allow_user_mysql_connect ]:True
+allow user_t var_run_t:dir { getattr open search }; [ allow_user_postgresql_connect ]:True
+allow user_t var_run_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t var_run_t:lnk_file { getattr read };
+allow user_t var_run_t:lnk_file { getattr read }; [ allow_kerberos ]:True
+allow user_t var_run_t:lnk_file { getattr read }; [ allow_user_mysql_connect ]:True
+allow user_t var_run_t:lnk_file { getattr read }; [ allow_user_postgresql_connect ]:True
+allow user_t var_run_t:lnk_file { getattr read }; [ ssh_use_gpg_agent ]:True
+allow user_t var_spool_t:dir { getattr ioctl lock open read search };
+allow user_t var_spool_t:file { getattr ioctl lock open read };
+allow user_t var_t:dir { getattr open search };
+allow user_t var_t:dir { getattr open search }; [ allow_kerberos ]:True
+allow user_t var_t:dir { getattr open search }; [ allow_user_mysql_connect ]:True
+allow user_t var_t:dir { getattr open search }; [ allow_user_postgresql_connect ]:True
+allow user_t var_t:dir { getattr open search }; [ ssh_use_gpg_agent ]:True
+allow user_t var_t:file { getattr ioctl lock open read };
+allow user_t var_t:lnk_file { getattr read };
+allow user_t virt_home_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t vlock_exec_t:file { execute getattr ioctl map open read };
+allow user_t vlock_t:process transition;
+allow user_t vmware_conf_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_exec_t:file { execute getattr ioctl map open read };
+allow user_t vmware_file_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t vmware_file_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_t:dir { getattr ioctl lock open read search };
+allow user_t vmware_t:file { getattr ioctl lock open read };
+allow user_t vmware_t:lnk_file { getattr read };
+allow user_t vmware_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t vmware_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t vmware_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_tmp_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t vmware_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t winbind_runtime_t:dir { getattr open search };
+allow user_t winbind_runtime_t:sock_file { append getattr open write };
+allow user_t winbind_t:unix_stream_socket connectto;
+allow user_t wireless_device_t:chr_file { getattr ioctl lock open read };
+allow user_t wireshark_exec_t:file { execute getattr ioctl map open read };
+allow user_t wireshark_home_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t wireshark_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_home_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_t:dir { getattr ioctl lock open read search };
+allow user_t wireshark_t:file { getattr ioctl lock open read };
+allow user_t wireshark_t:lnk_file { getattr read };
+allow user_t wireshark_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t wireshark_tmp_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t wireshark_tmp_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t wireshark_tmpfs_t:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_tmpfs_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t wireshark_tmpfs_t:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t wm_exec_t:file { execute getattr ioctl map open read };
+allow user_t wtmp_t:file { getattr ioctl lock open read };
+allow user_t xauth_exec_t:file { execute getattr ioctl map open read };
+allow user_t xauth_home_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xauth_t:dir { getattr ioctl lock open read search };
+allow user_t xauth_t:file { getattr ioctl lock open read };
+allow user_t xauth_t:lnk_file { getattr read };
+allow user_t xauth_t:process { getattr signal transition };
+allow user_t xdg_cache_t:dir { add_name create getattr ioctl lock open read remove_name search write };
+allow user_t xdg_cache_type:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_cache_type:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_cache_type:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_cache_type:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_cache_type:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_config_type:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_config_type:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_config_type:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_config_type:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_config_type:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_data_t:file { execute execute_no_trans getattr ioctl lock map open read };
+allow user_t xdg_data_type:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_data_type:fifo_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_data_type:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink watch write };
+allow user_t xdg_data_type:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_data_type:sock_file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_documents_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_documents_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_documents_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_downloads_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_downloads_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_downloads_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_music_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_music_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_music_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_pictures_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_pictures_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_pictures_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_videos_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink watch write };
+allow user_t xdg_videos_t:file { append create getattr ioctl link lock map open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdg_videos_t:lnk_file { create getattr ioctl link lock read relabelfrom relabelto rename setattr unlink write };
+allow user_t xdm_t:dbus send_msg;
+allow user_t xdm_t:fd use;
+allow user_t xdm_t:fifo_file { append getattr ioctl lock read write };
+allow user_t xdm_t:unix_stream_socket { accept connectto getattr };
+allow user_t xdm_tmp_t:dir { add_name getattr ioctl lock open read remove_name search write };
+allow user_t xdm_tmp_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
+allow user_t xdm_tmp_t:sock_file { append create getattr open read write };
+allow user_t xdm_var_run_t:file { getattr ioctl lock open read };
+allow user_t xevent_t:x_event receive;
+allow user_t xevent_t:x_synthetic_event receive;
+allow user_t xkb_var_lib_t:dir { getattr ioctl lock open read search };
+allow user_t xkb_var_lib_t:file { getattr ioctl lock map open read };
+allow user_t xkb_var_lib_t:lnk_file { getattr read };
+allow user_t xscreensaver_config_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xscreensaver_exec_t:file { execute getattr ioctl map open read };
+allow user_t xscreensaver_t:dir { getattr ioctl lock open read search };
+allow user_t xscreensaver_t:file { getattr ioctl lock open read };
+allow user_t xscreensaver_t:lnk_file { getattr read };
+allow user_t xscreensaver_t:process { getattr ptrace sigchld sigkill signal signull sigstop transition };
+allow user_t xscreensaver_tmpfs_t:dir { add_name create getattr ioctl link lock open read relabelfrom relabelto remove_name rename reparent rmdir search setattr unlink write };
+allow user_t xscreensaver_tmpfs_t:file { append create getattr ioctl link lock open read relabelfrom relabelto rename setattr unlink write };
+allow user_t xserver_exec_t:file { execute getattr ioctl map open read };
+allow user_t xserver_misc_device_t:chr_file { append getattr ioctl lock map open read write };
+allow user_t xserver_port_t:tcp_socket name_bind;
+allow user_t xserver_t:fd use;
+allow user_t xserver_t:process { siginh signal transition };
+allow user_t xserver_t:shm { associate getattr lock read unix_read unix_write write };
+allow user_t xserver_t:shm { associate getattr lock read unix_read unix_write write }; [ allow_write_xshm ]:True
+allow user_t xserver_t:unix_stream_socket connectto;
+allow user_t xserver_tmp_t:dir { getattr open search };
+allow user_t xserver_tmp_t:file { append getattr ioctl lock open read write };
+allow user_t xserver_tmp_t:sock_file { append getattr open write };
+allow user_t xserver_tmpfs_t:file { append getattr ioctl lock map open read write };
+allow user_t xserver_tmpfs_t:file { append getattr ioctl lock open read write }; [ allow_write_xshm ]:True
+allow user_t xsession_exec_t:file { entrypoint execute getattr ioctl lock map open read };
+allow user_t xsession_log_t:file { append create getattr ioctl link lock open read rename setattr unlink write };
